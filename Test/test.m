@@ -2,6 +2,7 @@
 clear;
 close all;
 
+% i = imread('../images/rice.png');
 i = imread('rice.png');
 BG = imopen(i, strel('disk', 15));
 subplot(2, 3, 1);
@@ -38,7 +39,9 @@ a = max(A);
 inf = find(A == a);
 
 % 读取原始图像
+% image = imread('../images/rice.png');
 image = imread('rice.png');
+
 i3 = zeros(size(image, 1), size(image, 2), 3);
 i4 = double(image);
 

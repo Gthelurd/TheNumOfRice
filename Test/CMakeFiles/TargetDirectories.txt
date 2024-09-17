@@ -1,0 +1,3 @@
+/home/guran2/code/TheNumOfRice/Test/CMakeFiles/rebuild_cache.dir
+/home/guran2/code/TheNumOfRice/Test/CMakeFiles/edit_cache.dir
+/home/guran2/code/TheNumOfRice/Test/CMakeFiles/countrice.dir
