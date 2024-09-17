@@ -1,3 +1,6 @@
+////// example.cpp
+// Writen by https://www.cnblogs.com/yocichen/p/10925428.html
+// To run this code in terminal:./countrice
 #include <iostream>  
 #include <stack> 
 #include <map> 
@@ -143,8 +146,8 @@ using namespace cv;
          //转二值图像
          cvtColor(src, src, COLOR_BGR2GRAY);
          imshow("灰度图象", src);
-         threshold(src, src, 22, 1, THRESH_BINARY);
-        //  threshold(src, src, 100, 1, THRESH_BINARY);//背景为白，目标为黑
+        //  threshold(src, src, 22, 1, THRESH_BINARY);
+         threshold(src, src, 75, 1, THRESH_BINARY);//背景为白，目标为黑
          imshow("二值图像", src);
          Mat res, rgbRes;
          //图象标记
@@ -161,7 +164,7 @@ using namespace cv;
          //转二值图像
          cvtColor(src, src, COLOR_BGR2GRAY);
          imshow("灰度图象", src);
-         threshold(src, src, 20, 1, THRESH_BINARY);//背景为白，目标为黑
+         threshold(src, src, 75, 1, THRESH_BINARY);//背景为白，目标为黑
          imshow("二值图像", src);
          Mat res, rgbRes;
          //图象标记

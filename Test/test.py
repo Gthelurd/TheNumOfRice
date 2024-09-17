@@ -1,3 +1,5 @@
+###### example.py
+# Write by https://blog.csdn.net/qq_36623595/article/details/109273629
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,13 +17,13 @@ def rice_area(img):
     # 转换为灰度图
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     # 使用自适应阈值操作进行图像二值化
-    # dst = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 101, 1)
+    dst = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 75, 1)
     
-    dst = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 145, 1)
+    # dst = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 95, 1)
     # 形态学去噪
     element = cv2.getStructuringElement(cv2.MORPH_CROSS, (3, 3))
     # 开运算去噪（先腐蚀再膨胀）
-    dst = cv2.morphologyEx(dst, cv2.MORPH_OPEN, element, iterations=3)  # 开运算3次可以全部分开，但是面积平均值少了10px
+    dst = cv2.morphologyEx(dst, cv2.MORPH_OPEN, element, iterations=2)  # 开运算3次可以全部分开，但是面积平均值少了10px
 
     # 轮廓检测函数
     contours, hierarchy = cv2.findContours(dst, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)

@@ -1,4 +1,6 @@
 % opengl('save','software') %因为我的linux电脑太老了，不支持nvida硬件加速，只能软件解码
+%%%%% example.m
+% Writen by https://blog.csdn.net/weixin_46187354/article/details/121764081
 clear;
 close all;
 
